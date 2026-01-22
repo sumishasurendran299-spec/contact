@@ -11,8 +11,8 @@ let contacts = [];
 async function fetchContacts() {
     try {
         const response = await fetch(API_URL);
-        if (!Response.ok) throw new Error("Network Error");
-        contacts = await Response.json();
+        if (!response.ok) throw new Error("Network Error");
+        contacts = await response.json();
         displayContacts(contacts);
     } catch (error) {
         errorMsg.textContent = "Failed to load contacts";
